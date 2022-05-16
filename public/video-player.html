@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>24 TV CANLI YAYIN</title>
+
+    <link
+      href="https://unpkg.com/video.js/dist/video-js.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      id="link_video"
+      type="text"
+      value="https://aa.nguonphimmoi.com/20220421/11477_87714d30/index.m3u8"
+      onchange="changeLink()"
+      style="height: 0px; width: 0px; border: none"
+    />
+    <button
+      style="height: 0px; width: 0px; border: none"
+      id="btn-change-link"
+      onclick="clickChange()"
+    ></button>
+    <video
+      id="my_video_1"
+      class="video-js vjs-fluid vjs-default-skin"
+      controls
+      preload="auto"
+      data-setup="{}"
+    >
+      <source
+        src="https://kd.hd-bophim.com/20220516/12019_fb9070ea/index.m3u8"
+        type="application/x-mpegURL"
+      />
+    </video>
+
+    <script>
+      const link = document.getElementById("link_video");
+      var player = videojs("my_video_1");
+      player.src(link.value);
+      player.play();
+
+      function changeLink() {
+        player.src(link.value);
+        player.play();
+      }
+      function clickChange() {
+        player.src(link.value);
+        player.play();
+      }
+    </script>
+  </body>
+</html>
